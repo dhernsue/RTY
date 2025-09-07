@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0F7FA" <!-- हल्का नीला पृष्ठभूमि -->
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="RTY Auto Cutter"
+        android:textColor="#004D40"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnNewVideoAutoCut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="नया वीडियो ऑटो कट करें"
+        android:backgroundTint="#29B6F6"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appTitle" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="48dp"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/circular_progress_bar" <!-- कस्टम प्रोग्रेस बार के लिए ड्राएबल -->
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnNewVideoAutoCut" />
+
+    <ImageButton
+        android:id="@+id/btnUploadVideo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/circle_button_background" <!-- कस्टम गोल बटन पृष्ठभूमि -->
+        android:src="@drawable/ic_upload_video" <!-- अपनी अपलोड आइकन यहाँ जोड़ें (जैसे ic_upload_video.xml) -->
+        android:contentDescription="वीडियो अपलोड करें"
+        app:tint="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="@+id/progressBar"
+        app:layout_constraintTop_toTopOf="@+id/progressBar" />
+
+    <TextView
+        android:id="@+id/tvUploadHint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="वीडियो अपलोड करें"
+        android:textColor="#00796B"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnUploadVideo"
+        app:layout_constraintStart_toStartOf="@+id/btnUploadVideo"
+        app:layout_constraintTop_toBottomOf="@+id/btnUploadVideo" />
+
+    <TextView
+        android:id="@+id/tvProcessingStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="वीडियो प्रोसेसिंग हो रही है..."
+        android:textColor="#004D40"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btnUploadVideo"
+        app:layout_constraintEnd_toEndOf="@+id/btnUploadVideo"
+        app:layout_constraintStart_toStartOf="@+id/btnUploadVideo" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btnGallery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:text="गैलरी से चुनें"
+            android:backgroundTint="#009688"
+            android:textColor="@android:color/white"
+            android:padding="12dp"
+            android:drawableStart="@drawable/ic_gallery" <!-- गैलरी आइकन जोड़ें -->
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical|start" />
+
+        <Button
+            android:id="@+id/btnMobileStorage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:text="मोबाइल स्टोरेज"
+            android:backgroundTint="#009688"
+            android:textColor="@android:color/white"
+            android:padding="12dp"
+            android:drawableStart="@drawable/ic_folder" <!-- फ़ोल्डर आइकन जोड़ें -->
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical|start" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
